@@ -568,7 +568,7 @@ body {
   position: absolute;
   bottom: 24px;
   right: 24px;
-  color: var(--primary);
+  color: var(--primary-dark);
   opacity: 0;
   transform: translateX(-8px);
   transition: var(--transition);
@@ -578,6 +578,10 @@ body {
 .service-card:hover .arrow {
   opacity: 1;
   transform: translateX(0);
+}
+
+.service-card:hover h3, .service-card:hover p {
+  color: var(--primary-dark);
 }
 
 /* ===== PORTFOLIO ===== */
