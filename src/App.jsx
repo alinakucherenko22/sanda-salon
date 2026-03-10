@@ -24,6 +24,7 @@ import ref2 from './assets/ref2.jpg'
 import ref3 from './assets/ref3.jpg'
 import ref4 from './assets/ref4.jpg'
 import ref5 from './assets/ref5.jpg'
+import logo from './assets/logo.jpg'
 
 /* ===== NAVBAR ===== */
 function Navbar() {
@@ -39,8 +40,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Основная навигация">
       <div className="navbar-inner">
         <a href="#" className="navbar-logo" aria-label="Sandra Beauty Salon">
-          <div className="logo-icon">S</div>
-          <span className="logo-text">Sandra</span>
+          <img src={logo} alt="Sandra Beauty Studio Logo" className="logo-img" />
         </a>
 
         <ul className="navbar-links">
@@ -552,8 +552,7 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <a href="#" className="navbar-logo" style={{ marginBottom: 0 }} aria-label="Sandra Beauty Salon">
-              <div className="logo-icon">S</div>
-              <span className="logo-text">Sandra</span>
+              <img src={logo} alt="Sandra Beauty Studio Logo" className="logo-img" />
             </a>
             <p>
               Современная эстетика и профессиональный уход. Мы создаём пространство, где ваша красота становится вдохновением.
