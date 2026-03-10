@@ -504,7 +504,6 @@ body {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  group: true;
 }
 
 .service-card::before {
@@ -627,7 +626,7 @@ body {
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(192, 21, 90, 0.9) 0%, transparent 70%);
   opacity: 0;
   transition: var(--transition);
   display: flex;
