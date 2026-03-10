@@ -1,10 +1,33 @@
 import { useState, useEffect } from 'react'
+import {
+  Gem,
+  Leaf,
+  Star,
+  Microscope,
+  Syringe,
+  Sun,
+  Scissors,
+  Hand,
+  Eye,
+  Sparkles,
+  MapPin,
+  Phone,
+  Clock,
+  Instagram,
+  MessageCircle
+} from 'lucide-react'
 import './index.css'
+
+// Import local images
+import ref1 from './assets/ref1.jpg'
+import ref2 from './assets/ref2.jpg'
+import ref3 from './assets/ref3.jpg'
+import ref4 from './assets/ref4.jpg'
+import ref5 from './assets/ref5.jpg'
 
 /* ===== NAVBAR ===== */
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -51,6 +74,7 @@ function Hero() {
 
         <h1 className="hero-title">
           Красота и Уверенность
+          <br />
           <span className="highlight">в Sandra</span>
         </h1>
 
@@ -89,10 +113,10 @@ function Hero() {
 /* ===== ABOUT ===== */
 function About() {
   const features = [
-    { icon: '💎', title: 'Экспертиза', desc: 'Лидеры в области современных методик красоты' },
-    { icon: '🌿', title: 'Премиальные продукты', desc: 'Только высококачественные бренды косметики' },
-    { icon: '⭐', title: 'Индивидуальный подход', desc: 'Внимание к каждому клиенту и задаче' },
-    { icon: '🔬', title: 'Современные методики', desc: 'Аппаратная косметология и инновации' },
+    { icon: <Gem size={28} strokeWidth={1.5} />, title: 'Экспертиза', desc: 'Лидеры в области современных методик красоты' },
+    { icon: <Leaf size={28} strokeWidth={1.5} />, title: 'Премиальные продукты', desc: 'Только высококачественные бренды косметики' },
+    { icon: <Star size={28} strokeWidth={1.5} />, title: 'Индивидуальный подход', desc: 'Внимание к каждому клиенту и задаче' },
+    { icon: <Microscope size={28} strokeWidth={1.5} />, title: 'Современные методики', desc: 'Аппаратная косметология и инновации' },
   ]
 
   return (
@@ -102,7 +126,7 @@ function About() {
           <div className="about-image-block">
             <div className="about-image-main">
               <img
-                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&auto=format&fit=crop&q=80"
+                src={ref1}
                 alt="Интерьер салона Sandra"
                 loading="lazy"
               />
@@ -125,7 +149,7 @@ function About() {
             <div className="about-features">
               {features.map((f) => (
                 <div className="about-feature" key={f.title}>
-                  <div className="icon">{f.icon}</div>
+                  <div className="icon" style={{ color: 'var(--primary)' }}>{f.icon}</div>
                   <h4>{f.title}</h4>
                   <p>{f.desc}</p>
                 </div>
@@ -141,37 +165,37 @@ function About() {
 /* ===== SERVICES ===== */
 const SERVICES = [
   {
-    icon: '💉',
+    icon: <Syringe size={32} strokeWidth={1.5} />,
     title: 'Инъекционные процедуры',
     desc: 'Мезотерапия, биоревитализация и контурная пластика от профессионалов.',
   },
   {
-    icon: '🔆',
+    icon: <Sun size={32} strokeWidth={1.5} />,
     title: 'Аппаратная косметология',
     desc: 'Чистка лица, пилинги и современные аппаратные методики омоложения.',
   },
   {
-    icon: '✂️',
+    icon: <Scissors size={32} strokeWidth={1.5} />,
     title: 'Парикмахерские услуги',
     desc: 'Сложное окрашивание, афрокудри, свадебные и вечерние прически.',
   },
   {
-    icon: '💅',
+    icon: <Hand size={32} strokeWidth={1.5} />,
     title: 'Ногтевые студии',
     desc: 'Маникюр, педикюр, наращивание и японский уход для ваших рук.',
   },
   {
-    icon: '🌿',
+    icon: <Leaf size={32} strokeWidth={1.5} />,
     title: 'Массаж',
     desc: 'Оздоровительный, антицеллюлитный, релаксирующий и лимфодренажный массаж.',
   },
   {
-    icon: '👁️',
+    icon: <Eye size={32} strokeWidth={1.5} />,
     title: 'Ресницы и брови',
     desc: 'Ламинирование, коррекция и профессиональное окрашивание бровей и ресниц.',
   },
   {
-    icon: '✨',
+    icon: <Sparkles size={32} strokeWidth={1.5} />,
     title: 'Эпиляция',
     desc: 'Профессиональная лазерная эпиляция для безупречно гладкой кожи.',
   },
@@ -194,7 +218,7 @@ function Services() {
         <div className="services-grid">
           {SERVICES.map((s) => (
             <div className="service-card" key={s.title} tabIndex={0} role="article" aria-label={s.title}>
-              <div className="service-icon">{s.icon}</div>
+              <div className="service-icon" style={{ color: 'var(--primary)' }}>{s.icon}</div>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
               <span className="arrow">→</span>
@@ -211,7 +235,7 @@ const PORTFOLIO_ITEMS = [
   {
     id: 1,
     title: 'Стильное окрашивание',
-    img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80',
+    img: ref2,
   },
   {
     id: 2,
@@ -225,18 +249,18 @@ const PORTFOLIO_ITEMS = [
   },
   {
     id: 4,
-    title: 'Вечерняя причёска',
-    img: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&auto=format&fit=crop&q=80',
+    title: 'Вечерние укладки',
+    img: ref3,
   },
   {
     id: 5,
     title: 'Ламинирование ресниц',
-    img: 'https://images.unsplash.com/photo-1516914589923-f105f1535f88?w=600&auto=format&fit=crop&q=80',
+    img: ref4,
   },
   {
     id: 6,
     title: 'Спа-уход',
-    img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&auto=format&fit=crop&q=80',
+    img: ref5,
   },
 ]
 
@@ -312,7 +336,7 @@ function Reviews() {
         <div className="reviews-grid">
           {REVIEWS.map((r) => (
             <article className="review-card" key={r.id} aria-label={`Отзыв от ${r.name}`}>
-              <div className="review-stars" aria-label={`${r.stars} из 5 звёзд`}>
+              <div className="review-stars" style={{ color: 'var(--primary-light)' }} aria-label={`${r.stars} из 5 звёзд`}>
                 {'★'.repeat(r.stars)}
               </div>
               <p className="review-text">«{r.text}»</p>
@@ -448,7 +472,7 @@ function Contacts() {
         <div className="contacts-grid">
           <div className="contact-info">
             <div className="contact-item">
-              <div className="icon">📍</div>
+              <div className="icon" style={{ color: 'var(--primary)' }}><MapPin size={24} /></div>
               <div>
                 <div className="label">Адрес</div>
                 <div className="value">
@@ -459,7 +483,7 @@ function Contacts() {
             </div>
 
             <div className="contact-item">
-              <div className="icon">📞</div>
+              <div className="icon" style={{ color: 'var(--primary)' }}><Phone size={24} /></div>
               <div>
                 <div className="label">Телефон</div>
                 <div className="value">
@@ -471,7 +495,7 @@ function Contacts() {
             </div>
 
             <div className="contact-item">
-              <div className="icon">🕐</div>
+              <div className="icon" style={{ color: 'var(--primary)' }}><Clock size={24} /></div>
               <div>
                 <div className="label">Часы работы</div>
                 <div className="value">Ежедневно: 10:00 — 20:00<br />Без выходных</div>
@@ -487,7 +511,7 @@ function Contacts() {
                 id="instagram-link"
                 aria-label="Instagram"
               >
-                📸 Instagram
+                <Instagram size={18} /> Instagram
               </a>
               <a
                 href="https://wa.me/77027774115"
@@ -497,7 +521,7 @@ function Contacts() {
                 id="whatsapp-link"
                 aria-label="WhatsApp"
               >
-                💬 WhatsApp
+                <MessageCircle size={18} /> WhatsApp
               </a>
             </div>
           </div>
@@ -509,6 +533,7 @@ function Contacts() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              style={{ filter: 'none' }} /* Removes dark mode inversion */
             />
           </div>
         </div>
